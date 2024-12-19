@@ -35,7 +35,7 @@ def get_quote():
             return jsonify(cached_response)
 
     # If not in cache or expired, make the external API call
-    quote_url = f"https://quote-api.jup.ag/v6/quote?inputMint={input_mint}&outputMint={output_mint}&amount={amount}&onlyDirectRoutes=true"
+    quote_url = f"https://quote-api.jup.ag/v6/quote?inputMint={input_mint}&outputMint={output_mint}&amount={amount}&onlyDirectRoutes=false"
     response = requests.get(quote_url)
 
     if response.status_code == 200:
